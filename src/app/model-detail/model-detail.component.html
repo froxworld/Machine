@@ -1,0 +1,16 @@
+<div *ngIf="model" class="col-1-4" routerLink="/detail/{{model.modelId}}">>
+  <input [(ngModel)]="model.modelName" placeholder="name">
+  <div><span>model Id: </span>{{model.modelId}}</div>
+  <div><span>model type : </span>{{model.modelType}}</div>
+  <div><span>model nom: </span>{{model.modelName}}</div>
+</div>
+<div *ngIf="model">
+  <h2>{{model.modelName | uppercase}} Details</h2>
+  <div><span>id: </span>{{model.modelId}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="model.modelName" placeholder="name"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>

@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <td>
+      <div><h2>liste des modeles :</h2></div>
+      <ul class="modeles">
+        <li *ngFor="let model of models"  [class.selected]="model === selectedModel" (click)="onSelect(model)">
+          <a routerLink="/detail/{{model.modelId}}">
+          <span class="badge">{{model.modelId}}</span>
+          </a>
+          <span>{{model.modelName}}</span>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <app-model-detail [model]="selectedModel"></app-model-detail>
+    </td>
+  </tr>
+</table>
